@@ -1,0 +1,16 @@
+{
+    "name": "mees-zacke/contao-speiseplan-bundle",
+    "description": "Speiseplan",
+    "type": "contao-bundle",
+    "require": {
+        "contao/core-bundle": "^4.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "mees-zacke\\contao-speiseplan-bundle\\": "src/"
+        }
+    },
+    "extra": {
+    "contao-manager-plugin": "mees-zacke\\SpeiseplanBundle\\ContaoManager\\Plugin"
+}
+}
