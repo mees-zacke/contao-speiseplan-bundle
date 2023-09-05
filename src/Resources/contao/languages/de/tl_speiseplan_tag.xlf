@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/de/tl_speiseplan_tag.php" source-language="de">
+    <body>
+      <trans-unit id="tl_speiseplan_tag.date.0">
+        <source>Datum</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.date.1">
+        <source>Tragen Sie das Datum des Tages ein.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.menu1.0">
+        <source>Menü 1</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.menu1.1">
+        <source>Tragen Sie die Inhalte des 1. Menüs ein.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.menu2.0">
+        <source>Menü 2</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.menu2.1">
+        <source>Tragen Sie die Inhalte des 2. Menüs ein.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.cssID.0">
+        <source>CSS ID/Klasse</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.cssID.1">
+        <source>Hier können Sie eine ID und beliebig viele Klassen eingeben.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.published.0">
+        <source>Artikel veröffentlichen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.published.1">
+        <source>Den Artikel auf der Webseite anzeigen.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.start.0">
+        <source>Anzeigen ab</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.start.1">
+        <source>Wenn Sie den Artikel erst ab einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.stop.0">
+        <source>Anzeigen bis</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.stop.1">
+        <source>Wenn Sie den Artikel nur bis zu einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.date_legend">
+        <source>Datumseinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.menu_legend">
+        <source>Menüeinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.expert_legend">
+        <source>Experteneinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.publish_legend">
+        <source>Veröffentlichung</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
