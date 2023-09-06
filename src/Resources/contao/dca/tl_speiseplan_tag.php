@@ -5,9 +5,8 @@ use Contao\DC_Table;
 $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
     'config' => [
         'dataContainer' => DC_Table::class,
-        'ptable' => 'tl_speiseplan',
+        'ptable' => 'tl_speiseplan_week',
         'enableVersioning' => true,
-        'switchToEdit'     => true,
 		'sql' => array
 		(
 			'keys' => array
@@ -18,14 +17,15 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
     ],
     'list' => [
         'sorting' => [
-			'mode'                    => DataContainer::MODE_SORTED,
+			'mode'                    => 4,
 			'fields'                  => array('date'),
-			'flag'                    => DataContainer::SORT_INITIAL_LETTER_ASC,
+			'headerFields'            => ['week','startDate'],
+			'flag'                    => 5,
 			'panelLayout'             => 'filter;search,limit'
         ],
         'label' => [
-			'fields'                  => array('date'),
-			'format'                  => '%s'
+			'fields'                  => array('date','name'),
+			'format'                  => '%s <span style="color:#999;padding-left:3px">[%s]</span>'
         ],
 		'global_operations' => [
 			'all' => [
@@ -61,7 +61,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		)
     ],
     'palettes' => [
-        		'default'                     => '{date_legend},date;{menu_legend},menu1,menu2;{expert_legend},cssID;{publish_legend},published,start,stop',
+        		'default'                     => '{date_legend},date,name;{menu_legend},menu1,menu2;{expert_legend},cssID;{publish_legend},invisible,start,stop',
     ],
     'fields' => [
 		'id' => array
@@ -83,8 +83,15 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"		),
+		'name' => array
+		(
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255)  NULL default ''"
 		),
 		'menu1' => [
 		    'exclude' => true,
@@ -105,16 +112,15 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('multiple'=>true, 'size'=>2, 'tl_class'=>'w50 clr'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'sql'                     => "varchar(255) NULL default ''"
 		),
-		'published' => array
+		'invisible' => array
 		(
 			'exclude'                 => true,
 			'toggle'                  => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('doNotCopy'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => "char(1) COLLATE ascii_bin NOT NULL default ''"
 		),
 		'start' => array
 		(

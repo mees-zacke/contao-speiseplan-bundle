@@ -6,7 +6,8 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
         'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
         'switchToEdit'     => true,
-        'ctable' => ['tl_speiseplan_tag'],
+        'markAsCopy' => 'name',
+        'ctable' => ['tl_speiseplan_week'],
 		'sql' => array
 		(
 			'keys' => array
@@ -18,12 +19,12 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
     'list' => [
         'sorting' => [
 			'mode'                    => DataContainer::MODE_SORTED,
-			'fields'                  => array('week'),
+			'fields'                  => array('name'),
 			'flag'                    => DataContainer::SORT_INITIAL_LETTER_ASC,
 			'panelLayout'             => 'filter;search,limit'
         ],
         'label' => [
-			'fields'                  => array('week'),
+			'fields'                  => array('name'),
 			'format'                  => '%s'
         ],
 		'global_operations' => [
@@ -37,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 		(
 			'edit' => array
 			(
-				'href'                => 'table=tl_speiseplan_tag',
+				'href'                => 'table=tl_speiseplan_week',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array
@@ -65,7 +66,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 		)
     ],
     'palettes' => [
-        		'default'                     => '{date_legend},week,startDate;{expert_legend},cssID;{publish_legend},published,start,stop',
+        		'default'                     => '{speiseplan_legend},name;{newsletter_legend},about,senderName,senderEmail,text,mailTemplate;{publish_legend},published',
     ],
     'fields' => [
 		'id' => array
@@ -76,7 +77,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 		(
 			'sql'                     => "int(10) unsigned NOT NULL default 0"
 		),
-		'week' => array
+		'name' => array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -84,19 +85,44 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-		'startDate' => array
+		'about' => array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50 clr'),
+			'sql'                     => "varchar(255) NULL default ''"
 		),
-		'cssID' => array
+		'senderName' => array
 		(
 			'exclude'                 => true,
+			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('multiple'=>true, 'size'=>2, 'tl_class'=>'w50 clr'),
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NULL default ''"
+		),
+		'senderEmail' => array
+		(
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NULL default ''"
+		),
+		'text' => array
+		(
+		    'exclude' => true,
+		    'search' => true,
+		    'inputType' => 'textarea',
+		    'eval' => ['tl_class'=>'clr long','rte'=>'tinyMCE'],
+		    'sql' => "text NULL default ''",
+		),
+		'mailTemplate' => array
+		(
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'published' => array
@@ -107,20 +133,6 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 			'inputType'               => 'checkbox',
 			'eval'                    => array('doNotCopy'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
-		),
-		'start' => array
-		(
-			'exclude'                 => true,
-			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
-			'sql'                     => "varchar(10) NOT NULL default ''"
-		),
-		'stop' => array
-		(
-			'exclude'                 => true,
-			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
-			'sql'                     => "varchar(10) NOT NULL default ''"
 		)
     ],
 ];

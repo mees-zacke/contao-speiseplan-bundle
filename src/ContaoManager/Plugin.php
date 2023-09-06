@@ -8,7 +8,7 @@ use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use Contao\SkeletonBundle\ContaoSkeletonBundle;
+use MeesZacke\ContaoSpeiseplanBundle\ContaoSpeiseplanBundle;
 
 class Plugin implements BundlePluginInterface
 {
