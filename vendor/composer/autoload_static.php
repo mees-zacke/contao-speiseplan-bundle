@@ -113,9 +113,9 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         '4af1dca6db8c527c6eed27bff85ff0e5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/yaz.php',
         'fe43ca06499ac37bc2dedd823af71eb5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zip.php',
         '356736db98a6834f0a886b8d509b0ecd' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zlib.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         '53c7be3308b5aa229d03a4dfcf6ca18d' => __DIR__ . '/..' . '/symfony/intl/Resources/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
     );
@@ -297,6 +297,7 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
             'Contao\\Image\\' => 13,
             'Contao\\CoreBundle\\' => 18,
             'Contao\\ComponentsInstaller\\' => 27,
+            'ContaoCommunityAlliance\\Composer\\Plugin\\' => 40,
             'Composer\\CaBundle\\' => 18,
             'Clue\\StreamFilter\\' => 18,
         ),
@@ -837,6 +838,10 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         array (
             0 => __DIR__ . '/..' . '/contao-components/installer/src',
         ),
+        'ContaoCommunityAlliance\\Composer\\Plugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/contao-community-alliance/composer-plugin/src',
+        ),
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
@@ -887,6 +892,10 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
             'HighlightUtilities\\' => 
             array (
                 0 => __DIR__ . '/..' . '/scrivo/highlight.php',
+            ),
+            'Haste\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/codefog/contao-haste/library',
             ),
         ),
         'D' => 

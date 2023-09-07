@@ -329,6 +329,88 @@
             "install-path": "../clue/stream-filter"
         },
         {
+            "name": "codefog/contao-haste",
+            "version": "4.25.27",
+            "version_normalized": "4.25.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codefog/contao-haste.git",
+                "reference": "47fa2c25dc461e1a15a9ca71f4792fda2852817d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codefog/contao-haste/zipball/47fa2c25dc461e1a15a9ca71f4792fda2852817d",
+                "reference": "47fa2c25dc461e1a15a9ca71f4792fda2852817d",
+                "shasum": ""
+            },
+            "require": {
+                "contao-community-alliance/composer-plugin": "~2.4 || ~3.0",
+                "contao/core-bundle": "^4.4",
+                "php": "~7.0 || ~8.0"
+            },
+            "replace": {
+                "contao-legacy/haste": "self.version"
+            },
+            "require-dev": {
+                "phpoffice/phpexcel": "^1.6",
+                "phpoffice/phpspreadsheet": "^1.6",
+                "phpunit/phpunit": "^9.2"
+            },
+            "suggest": {
+                "phpoffice/phpspreadsheet": "Required for the Haste\\IO\\ExcelFileWriter component."
+            },
+            "time": "2023-08-25T12:32:39+00:00",
+            "type": "contao-module",
+            "extra": {
+                "contao": {
+                    "sources": {
+                        "": "system/modules/haste"
+                    },
+                    "runonce": [
+                        "config/upgrade.php"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Haste\\": [
+                        "library/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Codefog",
+                    "homepage": "http://codefog.pl"
+                },
+                {
+                    "name": "terminal42 gmbh",
+                    "homepage": "https://www.terminal42.ch"
+                }
+            ],
+            "description": "haste extension for Contao Open Source CMS",
+            "keywords": [
+                "contao",
+                "haste"
+            ],
+            "support": {
+                "issues": "https://github.com/codefog/contao-haste/issues",
+                "source": "https://github.com/codefog/contao-haste/tree/4.25.27"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/codefog",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../codefog/contao-haste"
+        },
+        {
             "name": "composer/ca-bundle",
             "version": "1.3.7",
             "version_normalized": "1.3.7.0",
@@ -406,6 +488,58 @@
                 }
             ],
             "install-path": "./ca-bundle"
+        },
+        {
+            "name": "contao-community-alliance/composer-plugin",
+            "version": "3.2.2",
+            "version_normalized": "3.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/contao-community-alliance/composer-plugin.git",
+                "reference": "05c8d6881f9866e2ba26635420ae173546f2ede2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/contao-community-alliance/composer-plugin/zipball/05c8d6881f9866e2ba26635420ae173546f2ede2",
+                "reference": "05c8d6881f9866e2ba26635420ae173546f2ede2",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": "^7.1 || ^8.0",
+                "symfony/finder": "^4.4 || ^5.2",
+                "symfony/process": "^4.4 || ^5.2"
+            },
+            "conflict": {
+                "contao/core": "*",
+                "contao/core-bundle": "<4.9"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "symfony/phpunit-bridge": "^3.0"
+            },
+            "time": "2022-04-01T14:57:10+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ContaoCommunityAlliance\\Composer\\Plugin\\Plugin"
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ContaoCommunityAlliance\\Composer\\Plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "description": "Composer plugin that provides installers for contao-module and legacy-contao-module.",
+            "homepage": "http://c-c-a.org/",
+            "support": {
+                "issues": "https://github.com/contao-community-alliance/composer-plugin/issues",
+                "source": "https://github.com/contao-community-alliance/composer-plugin/tree/3.2.2"
+            },
+            "install-path": "../contao-community-alliance/composer-plugin"
         },
         {
             "name": "contao-components/ace",
