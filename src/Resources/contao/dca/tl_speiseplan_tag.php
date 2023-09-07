@@ -83,15 +83,20 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'eval'                    => array('mandatory' => true,'rgxp'=>'date', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
 			'sql'                     => "varchar(10) NOT NULL default ''"		),
+
 		'name' => array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255)  NULL default ''"
+			'sql'                     => "varchar(255)  NULL default ''",
+			'save_callback' => array
+			(
+				array('tl_speiseplan_tag', 'generateDay')
+			),
 		),
 		'menu1' => [
 		    'exclude' => true,
@@ -138,3 +143,18 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		)
     ],
 ];
+
+class tl_speiseplan_tag extends Backend
+{
+    public function generateDay($varValue, DataContainer $dc)
+    {
+        if (!$varValue){
+            $date = $dc->activeRecord->date;
+            $format = new \IntlDateFormatter($GLOBALS['TL_LANGUAGE'],NULL,NULL);
+            $format->setPattern('EEEE');
+            $day = $format->format($date);
+            $varValue = $day;
+        }
+        return $varValue;
+    }
+};

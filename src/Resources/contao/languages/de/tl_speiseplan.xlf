@@ -2,44 +2,59 @@
 <xliff version="1.1">
   <file datatype="php" original="src/Resources/contao/languages/de/tl_speiseplan.php" source-language="de">
     <body>
-      <trans-unit id="tl_speiseplan.week.0">
+      <trans-unit id="tl_speiseplan.name.0">
         <source>Kalenderwoche</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.week.1">
+      <trans-unit id="tl_speiseplan.name.1">
         <source>Tragen Sie die Kalenderwoche des Speiseplans ein.</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.startDate.0">
-        <source>Startdatum</source>
+      <trans-unit id="tl_speiseplan.addNewsletter.0">
+        <source>Speiseplan als Newsletter ausgeben.</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.startDate.1">
-        <source>Das Datum des ersten Tages (Montag) der Kalenderwoche des Speiseplans.</source>
+      <trans-unit id="tl_speiseplan.addNewsletter.1">
+        <source>Stellt des Speiseplan als Newsletter zur Verfügung.</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.cssID.0">
-        <source>CSS ID/Klasse</source>
+      <trans-unit id="tl_speiseplan.about.0">
+        <source>Betreff</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.cssID.1">
-        <source>Hier können Sie eine ID und beliebig viele Klassen eingeben.</source>
+      <trans-unit id="tl_speiseplan.about.1">
+        <source>Der Betreff des Speiseplan-Newsletters.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.senderName.0">
+        <source>Absendername</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.senderName.1">
+        <source>Der Absender des Speiseplan-Newsletters.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.senderEmail.0">
+        <source>Absenderadresse</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.senderEmail.1">
+        <source>Die Absendeadresse des Speiseplan-Newsletters.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.text.0">
+        <source>E-Mail Text</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.text.1">
+        <source>Der E-Mail Text des Speiseplan-Newsletters.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.mailTemplate.0">
+        <source>Mail Template</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan.mailTemplate.1">
+        <source>Html-Template der Mail.</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.published.0">
-        <source>Artikel veröffentlichen</source>
+        <source>Speiseplan veröffentlichen</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.published.1">
-        <source>Den Artikel auf der Webseite anzeigen.</source>
+        <source>Den Speiseplan auf der Webseite anzeigen.</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.start.0">
-        <source>Anzeigen ab</source>
+      <trans-unit id="tl_speiseplan.speiseplan_legend">
+        <source>Speiseplaneinstellungen</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan.start.1">
-        <source>Wenn Sie den Artikel erst ab einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
-      </trans-unit>
-      <trans-unit id="tl_speiseplan.stop.0">
-        <source>Anzeigen bis</source>
-      </trans-unit>
-      <trans-unit id="tl_speiseplan.stop.1">
-        <source>Wenn Sie den Artikel nur bis zu einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
-      </trans-unit>
-      <trans-unit id="tl_speiseplan.date_legend">
-        <source>Datumseinstellungen</source>
+      <trans-unit id="tl_speiseplan.newsletter_legend">
+        <source>Newslettereinstellungen</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.expert_legend">
         <source>Experteneinstellungen</source>

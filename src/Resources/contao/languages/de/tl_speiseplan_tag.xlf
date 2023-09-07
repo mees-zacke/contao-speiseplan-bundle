@@ -8,6 +8,12 @@
       <trans-unit id="tl_speiseplan_tag.date.1">
         <source>Tragen Sie das Datum des Tages ein.</source>
       </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.name.0">
+        <source>Wochentag</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_tag.name.1">
+        <source>Der Wochentag wird automatisch generiert, kann hier aber angepasst werden.</source>
+      </trans-unit>
       <trans-unit id="tl_speiseplan_tag.menu1.0">
         <source>Menü 1</source>
       </trans-unit>
@@ -26,11 +32,11 @@
       <trans-unit id="tl_speiseplan_tag.cssID.1">
         <source>Hier können Sie eine ID und beliebig viele Klassen eingeben.</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan_tag.published.0">
-        <source>Artikel veröffentlichen</source>
+      <trans-unit id="tl_speiseplan_tag.invisible.0">
+        <source>Unsichtbar</source>
       </trans-unit>
-      <trans-unit id="tl_speiseplan_tag.published.1">
-        <source>Den Artikel auf der Webseite anzeigen.</source>
+      <trans-unit id="tl_speiseplan_tag.invisible.1">
+        <source>Den Tag nicht auf der Website anzeigen.</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan_tag.start.0">
         <source>Anzeigen ab</source>
