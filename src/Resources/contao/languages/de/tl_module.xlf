@@ -1,0 +1,42 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/de/tl_module.php" source-language="de">
+    <body>
+      <trans-unit id="tl_module.speiseplan.0">
+        <source>Speisepläne</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan.1">
+        <source>Wählen Sie die Speisepläne aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_listType.0">
+        <source>Auflistung</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_listType.1">
+        <source>Wählen Sie die Art der Auflistung aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_sorting.0">
+        <source>Sortierreihenfolge</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_sorting.1">
+        <source>Wählen Sie die Sortierung aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_template.0">
+        <source>Speiseplan-Template</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_template.1">
+        <source>Wählen Sie das Template für die einzelnen Tage/Wochen aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.ASC">
+        <source>Datum aufsteigend</source>
+      </trans-unit>
+      <trans-unit id="tl_module.DESC">
+        <source>Datum absteigend</source>
+      </trans-unit>
+      <trans-unit id="tl_module.weekly">
+        <source>Wöchentlich</source>
+      </trans-unit>
+      <trans-unit id="tl_module.daily">
+        <source>Täglich</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

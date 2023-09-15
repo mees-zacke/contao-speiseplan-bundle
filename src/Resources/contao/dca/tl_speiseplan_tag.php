@@ -1,5 +1,5 @@
 <?php
-
+use Contao\Database;
 use Contao\DC_Table;
 
 $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
@@ -20,11 +20,11 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'mode'                    => 4,
 			'fields'                  => array('date'),
 			'headerFields'            => ['week','startDate'],
-			'flag'                    => 5,
+			'flag'                    => 7,
 			'panelLayout'             => 'filter;search,limit'
         ],
         'label' => [
-			'fields'                  => array('date','name'),
+			'fields'                  => array('dateClean','name'),
 			'format'                  => '%s <span style="color:#999;padding-left:3px">[%s]</span>'
         ],
 		'global_operations' => [
@@ -61,7 +61,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		)
     ],
     'palettes' => [
-        		'default'                     => '{date_legend},date,name;{menu_legend},menu1,menu2;{expert_legend},cssID;{publish_legend},invisible,start,stop',
+        		'default'                     => '{date_legend},date,name,dateClean;{menu_legend},menu1,menu2;{expert_legend},cssID;{publish_legend},invisible,start,stop',
     ],
     'fields' => [
 		'id' => array
@@ -85,6 +85,15 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory' => true,'rgxp'=>'date', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
 			'sql'                     => "varchar(10) NOT NULL default ''"		),
+			'save_callback' => array
+			(
+				array('tl_speiseplan_tag', 'generateDate')
+			),
+
+		'dateClean' => array
+		(
+			'sql'                     => "varchar(255)  NULL default ''",
+		),
 
 		'name' => array
 		(
@@ -155,6 +164,15 @@ class tl_speiseplan_tag extends Backend
             $day = $format->format($date);
             $varValue = $day;
         }
+        return $varValue;
+    }
+    public function generateDate($varValue, DataContainer $dc)
+    {
+        $date = $dc->activeRecord->date;
+        $date = date('d.m.Y',$date);
+        $id = $dc->activeRecord->id;
+        $sql = 'UPDATE `tl_speiseplan_tag` SET `dateClean` = ? WHERE `id` = ?';
+        $this->Database->prepare($sql)->execute($date,$id);
         return $varValue;
     }
 };

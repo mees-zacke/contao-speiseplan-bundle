@@ -1,3 +1,11 @@
-<div class="test">
-    test
-</div>
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+    <?php if (empty($this->articles)): ?>
+        <p class="empty"><?= $this->empty ?></p>
+    <?php else: ?>
+        <?= implode('', $this->articles) ?>
+    <?php endif; ?>
+
+<?php $this->endblock(); ?>

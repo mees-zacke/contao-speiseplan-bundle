@@ -2,8 +2,17 @@
 
 namespace MeesZacke\ContaoSpeiseplanBundle\Module;
 
-class SpeiseplanModule extends \Module
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Contao\Model\Collection;
+use Contao\FrontendTemplate;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanWeekModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanTagModel;
+
+class SpeiseplanModule extends SpeiseplanModuleParse
 {
+
+
+
     /**
      * @var string
      */
@@ -16,10 +25,12 @@ class SpeiseplanModule extends \Module
      */
     public function generate()
     {
+
+
         if (TL_MODE == 'BE') {
             $template = new \BackendTemplate('be_wildcard');
 
-            $template->wildcard = '### '.utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['helloWorld'][0]).' ###';
+            $template->wildcard = '### Speiseplan ###';
             $template->title = $this->headline;
             $template->id = $this->id;
             $template->link = $this->name;
@@ -27,7 +38,6 @@ class SpeiseplanModule extends \Module
 
             return $template->parse();
         }
-
         return parent::generate();
     }
 
@@ -36,6 +46,32 @@ class SpeiseplanModule extends \Module
      */
     protected function compile()
     {
-        $this->Template->message = 'Hello World';
+
+
+        /*
+            Get Weeks by chosen Speiseplans
+        */
+        $speiseplanArr = \StringUtil::deserialize($this->speiseplan);
+        $this->Template->speiseplan = $speiseplanArr;
+		$this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptySpeiseplan'];
+
+        $listType = $this->speiseplan_listType;
+        $sorting = $this->speiseplan_sorting;
+
+        $weekExpired = time();
+        $weekExpired = $weekExpired - (7 * 24 * 60 * 60);
+
+        $speiseplanData = SpeiseplanWeekModel::findBy(['pid IN (' . implode(',', $speiseplanArr) . ')','startDate > ?'], [$weekExpired],['order' => 'startDate ' . $sorting]);
+
+        $limit = $this->numberOfItems;
+        $offset = $this->skipFirst;
+
+        $this->Template->articles = [];
+
+        if ($speiseplanData !== null){
+                $this->Template->articles = $this->parseArticles($speiseplanData,$listType,$limit,$offset,$sorting);
+        }
+
+
     }
 }

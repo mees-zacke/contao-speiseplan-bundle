@@ -62,6 +62,9 @@
       <trans-unit id="tl_speiseplan.publish_legend">
         <source>Veröffentlichung</source>
       </trans-unit>
+      <trans-unit id="tl_speiseplan.emptySpeiseplan">
+        <source>Es sind momentan keine Speisepläne vorhanden.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

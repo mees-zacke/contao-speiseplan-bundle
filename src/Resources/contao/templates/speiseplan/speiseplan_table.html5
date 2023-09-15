@@ -1,0 +1,33 @@
+<?php
+    $days = [];
+    $dates = [];
+    $menu1 = [];
+    $menu2 = [];
+
+    foreach($this->days as $day){
+        array_push($days,$day['name']);
+        array_push($dates,date('d.m.Y',$day['date']));
+        array_push($menu1,$day['menu1']);
+        array_push($menu2,$day['menu2']);
+    }
+?>
+
+<table class="speiseplan_week">
+    <h3><?= $this->week ?></h3>
+    <thead>
+        <?php foreach($days as $index => $day): ?>
+            <th><span class="title"><?= $day ?></span><br><span class="date"><?= $dates[$index] ?></th>
+        <?php endforeach; ?>
+    </thead>
+    <tr class="menu">
+        <?php foreach($menu1 as $menu): ?>
+            <td><?= $menu ?></td>
+        <?php endforeach; ?>
+    </tr>
+    <tr class="menu">
+        <?php foreach($menu2 as $menu): ?>
+        <td><?= $menu ?></td>
+        <?php endforeach; ?>
+    </tr>
+</table>
+<?= $this->dumpTemplateVars(); ?>

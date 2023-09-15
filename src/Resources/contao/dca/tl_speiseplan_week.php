@@ -76,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_week'] = [
 		),
 		'pid' => array
 		(
-			'foreignKey'              => 'tl_speiseplan.week',
+			'foreignKey'              => 'tl_speiseplan.id',
 			'sql'                     => "int(10) unsigned NOT NULL default 0",
 			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
 		),
