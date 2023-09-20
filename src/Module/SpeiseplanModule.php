@@ -6,7 +6,9 @@ use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\Model\Collection;
 use Contao\FrontendTemplate;
 use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanWeekModel;
-use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanTagModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanDayModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanMenuModel;
 
 class SpeiseplanModule extends SpeiseplanModuleParse
 {
@@ -57,6 +59,11 @@ class SpeiseplanModule extends SpeiseplanModuleParse
 
         $listType = $this->speiseplan_listType;
         $sorting = $this->speiseplan_sorting;
+
+        $speiseplan = SpeiseplanModel::findBy('id',$speiseplanArr);
+
+        $menuStructure = \StringUtil::deserialize($speiseplan->menuList);
+        $this->Template->speiseplan_menuList = $menuStructure;
 
         $weekExpired = time();
         $weekExpired = $weekExpired - (7 * 24 * 60 * 60);

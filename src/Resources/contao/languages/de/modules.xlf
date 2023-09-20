@@ -14,6 +14,12 @@
       <trans-unit id="FMD.speiseplan.1">
         <source>Gibt Speisepläne im Kalenderformat aus</source>
       </trans-unit>
+      <trans-unit id="FMD.speiseplan_excelImport.0">
+        <source>Speiseplan Excel Import</source>
+      </trans-unit>
+      <trans-unit id="FMD.speiseplan_excelImport.1">
+        <source>Stellt ein Formular zum Importieren Ihrer Excel-Datei zur Verfügung.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

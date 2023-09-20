@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/de/tl_speiseplan_menu.php" source-language="de">
+    <body>
+      <trans-unit id="tl_speiseplan_menu.menu.0">
+        <source>Menü</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.menu.1">
+        <source>Wählen Sie die zugehörige Menükategorie aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.text.0">
+        <source>Inhalt</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.text.1">
+        <source>Tragen Sie den Inhalt des Menüs ein.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.cssID.0">
+        <source>CSS ID/Klasse</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.cssID.1">
+        <source>Hier können Sie eine ID und beliebig viele Klassen eingeben.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.invisible.0">
+        <source>Unsichtbar</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.invisible.1">
+        <source>Den Tag nicht auf der Website anzeigen.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.start.0">
+        <source>Anzeigen ab</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.start.1">
+        <source>Wenn Sie den Artikel erst ab einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.stop.0">
+        <source>Anzeigen bis</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.stop.1">
+        <source>Wenn Sie den Artikel nur bis zu einem bestimmten Zeitpunkt auf der Webseite anzeigen möchten, können Sie diesen hier eingeben. Andernfalls lassen Sie das Feld leer.</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.menu_legend">
+        <source>Menüeinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.expert_legend">
+        <source>Experteneinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_speiseplan_menu.publish_legend">
+        <source>Veröffentlichung</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -37,6 +37,12 @@
       <trans-unit id="tl_module.daily">
         <source>Täglich</source>
       </trans-unit>
+      <trans-unit id="tl_module.speiseplan_menuList.0">
+        <source>Menüliste</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_menuList.1">
+        <source>Hier können Sie Formatierungen für Ihre Vorlagen-Excel einstellen. Tragen Sie nichts ein, wird jede Zeile der Excel-Datei als einzelnes Menü betrachtet.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

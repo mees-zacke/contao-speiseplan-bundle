@@ -1,33 +1,33 @@
 <?php
     $days = [];
     $dates = [];
-    $menu1 = [];
-    $menu2 = [];
 
     foreach($this->days as $day){
         array_push($days,$day['name']);
         array_push($dates,date('d.m.Y',$day['date']));
-        array_push($menu1,$day['menu1']);
-        array_push($menu2,$day['menu2']);
     }
 ?>
 
 <table class="speiseplan_week">
     <h3><?= $this->week ?></h3>
     <thead>
+        <th>&nbsp;</th>
         <?php foreach($days as $index => $day): ?>
             <th><span class="title"><?= $day ?></span><br><span class="date"><?= $dates[$index] ?></th>
         <?php endforeach; ?>
     </thead>
-    <tr class="menu">
-        <?php foreach($menu1 as $menu): ?>
-            <td><?= $menu ?></td>
+    <tbody>
+        <?php foreach($this->menus as $alias => $menu): ?>
+        <tr class="row <?= $alias ?>">
+            <th class="menu"><?= $menu ?></th>
+            <?php foreach($this->days as $day): ?>
+                <?php if ($day['menus'][$alias]): ?>
+                <td><?= $day['menus'][$alias] ?></strong></td>
+                <?php else: ?>
+                    <td>&nbsp;</td>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </tr>
         <?php endforeach; ?>
-    </tr>
-    <tr class="menu">
-        <?php foreach($menu2 as $menu): ?>
-        <td><?= $menu ?></td>
-        <?php endforeach; ?>
-    </tr>
+    </tbody>
 </table>
-<?= $this->dumpTemplateVars(); ?>

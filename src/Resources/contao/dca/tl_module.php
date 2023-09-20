@@ -3,12 +3,15 @@
 $GLOBALS['TL_DCA']['tl_module']['palettes']['speiseplan'] =
     '{title_legend},name,headline,type;{speiseplan_legend},speiseplan,speiseplan_listType,speiseplan_sorting,numberOfItems,skipFirst;{protected_legend:hide},protected;{template_legend},speiseplan_template;{expert_legend:hide},guests,cssID,space'
 ;
+$GLOBALS['TL_DCA']['tl_module']['palettes']['speiseplan_excelImport'] =
+    '{title_legend},name,headline,type;{speiseplan_legend},speiseplan,speiseplan_menuList;{protected_legend:hide},protected;{template_legend},speiseplan_template;{expert_legend:hide},guests,cssID,space'
+;
 
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan'] = array
 (
 	'exclude'                 => true,
-	'inputType'               => 'checkbox',
+	'inputType'               => 'radio',
 	'options_callback'        => array('tl_module_speiseplan', 'getSpeiseplan'),
 	'eval'                    => array('multiple'=>true, 'mandatory'=>true),
 	'sql'                     => "blob NULL"
@@ -47,6 +50,15 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_template'] = array
 	},
 	'eval'                    => array('includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50 clr'),
 	'sql'                     => "varchar(64) COLLATE ascii_bin NOT NULL default ''"
+);
+
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_menuList'] = array
+(
+			'exclude'                 => true,
+			'inputType'               => 'optionWizard',
+			'eval'                    => array('multiple'=>true, 'allowHtml'=>true, 'tl_class'=>'w50 clr'),
+			'sql'                     => "blob NULL"
 );
 
 class tl_module_speiseplan extends Backend

@@ -2,12 +2,14 @@
 
 
 namespace MeesZacke\ContaoSpeiseplanBundle\Module;
-
+use Contao\System;
 use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\Model\Collection;
 use Contao\FrontendTemplate;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanModel;
 use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanWeekModel;
-use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanTagModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanDayModel;
+use MeesZacke\ContaoSpeiseplanBundle\Model\SpeiseplanMenuModel;
 
 class SpeiseplanModuleParse extends \Module{
     protected function compile(){
@@ -16,7 +18,7 @@ class SpeiseplanModuleParse extends \Module{
 
     public function getDays($weeks,$tstamp=0,$limit=0,$offset=0,$sorting='ASC'){
 
-        $dayData = SpeiseplanTagModel::findBy(['pid IN (' . implode(',', $weeks) . ')','date > ?'], [$tstamp],['limit'=>$limit,'offset'=>$offset,'order'=>'date '.$sorting]);
+        $dayData = SpeiseplanDayModel::findBy(['pid IN (' . implode(',', $weeks) . ')','date > ?'], [$tstamp],['limit'=>$limit,'offset'=>$offset,'order'=>'date '.$sorting]);
 
         $days = [];
 
@@ -26,8 +28,22 @@ class SpeiseplanModuleParse extends \Module{
                $day['pid'] = $dayData->pid;
                $day['name'] = $dayData->name;
                $day['date'] = $dayData->date;
-               $day['menu1'] = $dayData->menu1;
-               $day['menu2'] = $dayData->menu2;
+
+               $menuData = SpeiseplanMenuModel::findBy('pid',$dayData->id);
+               if ($menuData !== null){
+                   $menus = [];
+                   foreach ($menuData as $menuData){
+                    if ($menuData->menu !== null){
+                        $menuAlias = System::getContainer()->get('contao.slug')->generate($menuData->menu);
+                        $menus[$menuAlias] = $menuData->text;
+                    }
+                   }
+
+                   $day['menus'] = $menus;
+               } else{
+                $day['menus'] = [];
+               }
+
                $days[] = $day;
             };
         };
@@ -41,7 +57,18 @@ class SpeiseplanModuleParse extends \Module{
 
         $objTemplate->week = $arrData->week;
 
-        $objTemplate->test = $arrData;
+
+        $speiseplan = SpeiseplanModel::findBy('id',$arrData->pid);
+        $menuList = \StringUtil::deserialize($speiseplan->menuList);
+        $menus = [];
+        if ($menuList !== null){
+            foreach($menuList as $menu){
+                $menuAlias = System::getContainer()->get('contao.slug')->generate($menu);
+                $menus[$menuAlias] = $menu;
+            }
+        }
+        $objTemplate->menus = $menus;
+
         $objTemplate->days = $this->getDays($weeks);
 
         return $objTemplate->parse();
@@ -51,6 +78,17 @@ class SpeiseplanModuleParse extends \Module{
 		$objTemplate = new FrontendTemplate($this->speiseplan_template ?: 'speiseplan_table');
 
         $objTemplate->weeks =  implode(',',$weeks);
+
+        $speiseplan = SpeiseplanModel::findBy('id',$arrData->pid);
+        $menuList = \StringUtil::deserialize($speiseplan->menuList);
+        $menus = [];
+        if ($menuList !== null){
+            foreach($menuList as $menu){
+                $menuAlias = System::getContainer()->get('contao.slug')->generate($menu);
+                $menus[$menuAlias] = $menu;
+            }
+        }
+        $objTemplate->menus = $menus;
 
         $dayExpired = time();
         $dayExpired = $dayExpired - (24 * 60 * 60);

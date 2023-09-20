@@ -7,7 +7,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_week'] = [
         'ptable' => 'tl_speiseplan',
         'enableVersioning' => true,
         'switchToEdit'     => true,
-        'ctable' => ['tl_speiseplan_tag'],
+        'ctable' => ['tl_speiseplan_day'],
 		'sql' => array
 		(
 			'keys' => array
@@ -39,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_week'] = [
 		(
 			'edit' => array
 			(
-				'href'                => 'table=tl_speiseplan_tag',
+				'href'                => 'table=tl_speiseplan_day',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array

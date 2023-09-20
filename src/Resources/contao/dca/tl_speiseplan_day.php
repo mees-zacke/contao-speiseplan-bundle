@@ -2,10 +2,11 @@
 use Contao\Database;
 use Contao\DC_Table;
 
-$GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
+$GLOBALS['TL_DCA']['tl_speiseplan_day'] = [
     'config' => [
         'dataContainer' => DC_Table::class,
         'ptable' => 'tl_speiseplan_week',
+        'ctable' => ['tl_speiseplan_menu'],
         'enableVersioning' => true,
 		'sql' => array
 		(
@@ -38,8 +39,13 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		(
 			'edit' => array
 			(
-				'href'                => 'act=edit',
+				'href'                => 'table=tl_speiseplan_menu',
 				'icon'                => 'edit.svg'
+			),
+			'editheader' => array
+			(
+				'href'                => 'act=edit',
+				'icon'                => 'header.svg',
 			),
 			'copy' => array
 			(
@@ -61,7 +67,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		)
     ],
     'palettes' => [
-        		'default'                     => '{date_legend},date,name,dateClean;{menu_legend},menu1,menu2;{expert_legend},cssID;{publish_legend},invisible,start,stop',
+        		'default'                     => '{date_legend},date,name,dateClean;{expert_legend},cssID;{publish_legend},invisible,start,stop',
     ],
     'fields' => [
 		'id' => array
@@ -70,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 		),
 		'pid' => array
 		(
-			'foreignKey'              => 'tl_speiseplan.week',
+			'foreignKey'              => 'tl_speiseplan_week.id',
 			'sql'                     => "int(10) unsigned NOT NULL default 0",
 			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
 		),
@@ -87,7 +93,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'sql'                     => "varchar(10) NOT NULL default ''"		),
 			'save_callback' => array
 			(
-				array('tl_speiseplan_tag', 'generateDate')
+				array('tl_speiseplan_day', 'generateDate')
 			),
 
 		'dateClean' => array
@@ -104,23 +110,9 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
 			'sql'                     => "varchar(255)  NULL default ''",
 			'save_callback' => array
 			(
-				array('tl_speiseplan_tag', 'generateDay')
+				array('tl_speiseplan_day', 'generateDay')
 			),
 		),
-		'menu1' => [
-		    'exclude' => true,
-		    'search' => true,
-		    'inputType' => 'textarea',
-		    'eval' => ['mandatory' => true,'tl_class'=>'clr long','rte'=>'tinyMCE'],
-		    'sql' => "text NOT NULL default ''",
-		],
-		'menu2' => [
-		    'exclude' => true,
-		    'search' => true,
-		    'inputType' => 'textarea',
-		    'eval' => ['mandatory' => true,'tl_class'=>'clr long','rte'=>'tinyMCE'],
-		    'sql' => "text NOT NULL default ''",
-		],
 		'cssID' => array
 		(
 			'exclude'                 => true,
@@ -153,7 +145,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_tag'] = [
     ],
 ];
 
-class tl_speiseplan_tag extends Backend
+class tl_speiseplan_day extends Backend
 {
     public function generateDay($varValue, DataContainer $dc)
     {
@@ -171,7 +163,7 @@ class tl_speiseplan_tag extends Backend
         $date = $dc->activeRecord->date;
         $date = date('d.m.Y',$date);
         $id = $dc->activeRecord->id;
-        $sql = 'UPDATE `tl_speiseplan_tag` SET `dateClean` = ? WHERE `id` = ?';
+        $sql = 'UPDATE `tl_speiseplan_day` SET `dateClean` = ? WHERE `id` = ?';
         $this->Database->prepare($sql)->execute($date,$id);
         return $varValue;
     }
