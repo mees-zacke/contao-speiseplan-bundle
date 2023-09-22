@@ -21,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan_week'] = [
 			'mode'                    => 4,
 			'fields'                  => array('tstamp'),
 			'headerFields'            => ['name','startDate'],
-			'flag'                    => 9,
+			'flag'                    => 7,
 			'panelLayout'             => 'filter;search,limit'
         ],
         'label' => [
