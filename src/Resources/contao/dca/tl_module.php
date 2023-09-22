@@ -66,7 +66,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_dateCell'] = array
 	'exclude'                 => true,
 	'inputType'               => 'text',
 	'eval'                    => array('mandatory'=>true,'tl_class'=>'clr w50'),
-	'sql'                     => "varchar(255) NOT NULL"
+	'sql'                     => "varchar(255) NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_startCell'] = array
@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_startCell'] = array
 	'exclude'                 => true,
 	'inputType'               => 'text',
 	'eval'                    => array('mandatory'=>true,'tl_class'=>'clr w50'),
-	'sql'                     => "varchar(255) NOT NULL"
+	'sql'                     => "varchar(255) NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_endCell'] = array
@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_endCell'] = array
 	'exclude'                 => true,
 	'inputType'               => 'text',
 	'eval'                    => array('mandatory'=>true,'tl_class'=>'w50'),
-	'sql'                     => "varchar(255) NOT NULL"
+	'sql'                     => "varchar(255) NULL"
 );
 
 
