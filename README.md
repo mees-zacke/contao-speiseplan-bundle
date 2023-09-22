@@ -1,3 +1,3 @@
 # Contao Speiseplan
 
-Hier steht Text zum Bundle
+Import und Darstellung von Speiseplänen für Contao
