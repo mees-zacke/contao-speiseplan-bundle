@@ -8,6 +8,4 @@
         <?= implode('', $this->articles) ?>
     <?php endif; ?>
 
-    <?= $this->dumpTemplateVars(); ?>
-
 <?php $this->endblock(); ?>
