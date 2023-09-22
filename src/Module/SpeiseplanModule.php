@@ -65,10 +65,11 @@ class SpeiseplanModule extends SpeiseplanModuleParse
         $menuStructure = \StringUtil::deserialize($speiseplan->menuList);
         $this->Template->speiseplan_menuList = $menuStructure;
 
+
         $weekExpired = time();
         $weekExpired = $weekExpired - (7 * 24 * 60 * 60);
 
-        $speiseplanData = SpeiseplanWeekModel::findBy(['pid = ?','startDate > ?'], [$speiseplan,$weekExpired],['order' => 'startDate ' . $sorting]);
+        $speiseplanData = SpeiseplanWeekModel::findBy(['pid = ?','startDate > ?'], [$speiseplan->id,$weekExpired],['order' => 'startDate ' . $sorting]);
 
         $limit = $this->numberOfItems;
         $offset = $this->skipFirst;
