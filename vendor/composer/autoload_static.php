@@ -116,6 +116,7 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         '53c7be3308b5aa229d03a4dfcf6ca18d' => __DIR__ . '/..' . '/symfony/intl/Resources/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '01b9d7a32d35f94387fdb19d11e7de22' => __DIR__ . '/..' . '/menatwork/contao-multicolumnwizard-bundle/src/deprecated-autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
     );
@@ -227,7 +228,10 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         ),
         'M' => 
         array (
+            'MultiColumnWizard\\' => 18,
             'Monolog\\' => 8,
+            'MenAtWork\\MultiColumnWizard\\' => 28,
+            'MenAtWork\\MultiColumnWizardBundle\\' => 34,
             'MeesZacke\\ContaoSpeiseplanBundle\\Tests\\' => 39,
             'MeesZacke\\ContaoSpeiseplanBundle\\' => 33,
             'MatthiasMullie\\PathConverter\\' => 29,
@@ -651,9 +655,21 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         array (
             0 => __DIR__ . '/..' . '/nelmio/cors-bundle',
         ),
+        'MultiColumnWizard\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/menatwork/contao-multicolumnwizard-bundle/legacy_layer/psr-4-mcw',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'MenAtWork\\MultiColumnWizard\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/menatwork/contao-multicolumnwizard-bundle/legacy_layer/psr-4-maw',
+        ),
+        'MenAtWork\\MultiColumnWizardBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/menatwork/contao-multicolumnwizard-bundle/src',
         ),
         'MeesZacke\\ContaoSpeiseplanBundle\\Tests\\' => 
         array (
@@ -1137,6 +1153,7 @@ class ComposerStaticInite5f9efca76c11a0951522864c7fc0e56
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Locale' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Locale.php',
+        'MultiColumnWizardHelper' => __DIR__ . '/..' . '/menatwork/contao-multicolumnwizard-bundle/legacy_layer/classmap/MultiColumnWizardHelper.php',
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',

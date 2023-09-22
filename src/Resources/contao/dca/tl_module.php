@@ -4,7 +4,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['speiseplan'] =
     '{title_legend},name,headline,type;{speiseplan_legend},speiseplan,speiseplan_listType,speiseplan_sorting,numberOfItems,skipFirst;{protected_legend:hide},protected;{template_legend},speiseplan_template;{expert_legend:hide},guests,cssID,space'
 ;
 $GLOBALS['TL_DCA']['tl_module']['palettes']['speiseplan_excelImport'] =
-    '{title_legend},name,headline,type;{speiseplan_legend},speiseplan,speiseplan_menuList;{protected_legend:hide},protected;{template_legend},speiseplan_template;{expert_legend:hide},guests,cssID,space'
+    '{title_legend},name,headline,type;{speiseplan_legend},speiseplan_excel,speiseplan_dateCell,speiseplan_startCell,speiseplan_endCell,speiseplan_menuList;{protected_legend:hide},protected;{template_legend},template;{expert_legend:hide},guests,cssID,space'
 ;
 
 
@@ -52,12 +52,57 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_template'] = array
 	'sql'                     => "varchar(64) COLLATE ascii_bin NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_excel'] = array
+(
+	'exclude'                 => true,
+	'inputType'               => 'radio',
+	'options_callback'        => array('tl_module_speiseplan', 'getSpeiseplan'),
+	'eval'                    => array('multiple'=>true, 'mandatory'=>true,'submitOnChange' => true),
+	'sql'                     => "blob NULL"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_dateCell'] = array
+(
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('mandatory'=>true,'tl_class'=>'clr w50'),
+	'sql'                     => "varchar(255) NOT NULL"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_startCell'] = array
+(
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('mandatory'=>true,'tl_class'=>'clr w50'),
+	'sql'                     => "varchar(255) NOT NULL"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_endCell'] = array
+(
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('mandatory'=>true,'tl_class'=>'w50'),
+	'sql'                     => "varchar(255) NOT NULL"
+);
+
+
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_menuList'] = array
 (
 			'exclude'                 => true,
-			'inputType'               => 'optionWizard',
-			'eval'                    => array('multiple'=>true, 'allowHtml'=>true, 'tl_class'=>'w50 clr'),
+			'inputType'               => 'multiColumnWizard',
+			'eval'                    => array('multiple'=>true, 'allowHtml'=>true, 'tl_class'=>'w50 clr',
+                                      'columnFields' => [
+                                        'menuName' =>[
+                                            'label' => &$GLOBALS['TL_LANG']['tl_module']['menuName'],
+                                            'inputType' => 'text',
+                                        ],
+                                        'styleClass' => [
+                                            'label' => &$GLOBALS['TL_LANG']['tl_module']['styleClass'],
+                                            'inputType' => 'text',
+                                        ],
+                                      ]
+			),
 			'sql'                     => "blob NULL"
 );
 
@@ -86,5 +131,7 @@ class tl_module_speiseplan extends Backend
 
 		return $arrArchives;
 
+    }
+    public function getMenusBySpeiseplan($dc){
     }
 }

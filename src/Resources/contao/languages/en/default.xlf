@@ -5,6 +5,15 @@
       <trans-unit id="MSC.emptySpeiseplan">
         <source>There are no menus available at the moment.</source>
       </trans-unit>
+      <trans-unit id="MSC.excelUploadLabel">
+        <source>Upload excel-file</source>
+      </trans-unit>
+      <trans-unit id="MSC.excelSubmitLabel">
+        <source>import</source>
+      </trans-unit>
+      <trans-unit id="MSC.speiseplanWeek">
+        <source>calendar week</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

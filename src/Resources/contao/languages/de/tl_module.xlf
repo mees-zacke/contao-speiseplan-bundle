@@ -5,7 +5,13 @@
         <source>Speisepläne</source>
       </trans-unit>
       <trans-unit id="tl_module.speiseplan.1">
-        <source>Wählen Sie die Speisepläne aus.</source>
+        <source>Wählen Sie den Speiseplan aus.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_excel.0">
+        <source>Speisepläne</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_excel.1">
+        <source>Wählen Sie den Speiseplan aus.</source>
       </trans-unit>
       <trans-unit id="tl_module.speiseplan_listType.0">
         <source>Auflistung</source>
@@ -37,11 +43,47 @@
       <trans-unit id="tl_module.daily">
         <source>Täglich</source>
       </trans-unit>
+      <trans-unit id="tl_module.menuName">
+        <source>Menü-Name</source>
+      </trans-unit>
+      <trans-unit id="tl_module.excelRow">
+        <source>Excel Reihe</source>
+      </trans-unit>
+      <trans-unit id="tl_module.styleClass">
+        <source>CSS-Klasse</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_dateCell.0">
+        <source>Datumszelle</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_dateCell.1">
+        <source>Tragen Sie hier die Zelle des Datums der Kalenderwoche im gängigen Excel-Format ein (bspw.: A1).</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_startCell.0">
+        <source>Menü Startzelle</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_startCell.1">
+        <source>Tragen Sie hier die Zelle ein, bei der die Menüs starten (obere linke Ecke), im gängigen Excel-Format ein (bspw.: A1).</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_endCell.0">
+        <source>Menü Endzelle</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_endCell.1">
+        <source>Tragen Sie hier die Zelle ein, bei der die Menüs enden (untere rechte Ecke), im gängigen Excel-Format ein (bspw.: A1).</source>
+      </trans-unit>
       <trans-unit id="tl_module.speiseplan_menuList.0">
         <source>Menüliste</source>
       </trans-unit>
       <trans-unit id="tl_module.speiseplan_menuList.1">
         <source>Hier können Sie Formatierungen für Ihre Vorlagen-Excel einstellen. Tragen Sie nichts ein, wird jede Zeile der Excel-Datei als einzelnes Menü betrachtet.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.speiseplan_legend">
+        <source>Speiseplaneinstellungen</source>
+      </trans-unit>
+      <trans-unit id="tl_module.excelUploadLabel">
+        <source>Excel-Datei hochladen</source>
+      </trans-unit>
+      <trans-unit id="tl_module.excelSubmitLabel">
+        <source>Importieren</source>
       </trans-unit>
     </body>
   </file>

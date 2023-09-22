@@ -82,8 +82,8 @@ $GLOBALS['TL_DCA']['tl_speiseplan_menu'] = [
             'exclude'                 => true,
             'inputType'               => 'radio',
             'options_callback'        => array('tl_speiseplan_menu', 'getMenus'),
-            'eval'                    => array('multiple'=>true, 'mandatory'=>false),
-            'sql'                     => "blob NULL"
+            'eval'                    => array('mandatory'=>true),
+            'sql'                     => "varchar(255) NULL"
         ],
 		'text' => [
 		    'exclude' => true,
@@ -135,8 +135,9 @@ class tl_speiseplan_menu extends Backend
 
         $menus = \StringUtil::deserialize($objArchives->menuList);
 
-        foreach($menus as $menu){
-           $arrArchives[$menu] = $menu;
+        foreach($menus as $menuName){
+           $menuAlias = System::getContainer()->get('contao.slug')->generate($menuName);
+           $arrArchives[$menuAlias] = $menuName;
         }
 
 		return $arrArchives;

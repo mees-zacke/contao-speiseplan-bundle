@@ -5,6 +5,18 @@
         <source>There are no menus available at the moment.</source>
         <target>Es sind momentan keine Speisepläne verfügbar.</target>
       </trans-unit>
+      <trans-unit id="MSC.excelUploadLabel">
+        <source>Upload excel-file</source>
+        <target>Excel-Datei hochladen</target>
+      </trans-unit>
+      <trans-unit id="MSC.excelSubmitLabel">
+        <source>import</source>
+        <target>Importieren</target>
+      </trans-unit>
+      <trans-unit id="MSC.speiseplanWeek">
+        <source>calendar week</source>
+        <target>Kalenderwoche</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

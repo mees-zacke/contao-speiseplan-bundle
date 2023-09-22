@@ -115,6 +115,7 @@ return array(
     'b6ec61354e97f32c0ae683041c78392a' => $vendorDir . '/scrivo/highlight.php/HighlightUtilities/functions.php',
     '53c7be3308b5aa229d03a4dfcf6ca18d' => $vendorDir . '/symfony/intl/Resources/functions.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+    '01b9d7a32d35f94387fdb19d11e7de22' => $vendorDir . '/menatwork/contao-multicolumnwizard-bundle/src/deprecated-autoload.php',
     'ec07570ca5a812141189b1fa81503674' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     '92c8763cd6170fce6fcfe7e26b4e8c10' => $vendorDir . '/symfony/phpunit-bridge/bootstrap.php',
 );

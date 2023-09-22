@@ -3,7 +3,7 @@
         'name' => 'mees-zacke/contao-speiseplan-bundle',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'db648c122f4d4ca8f2b769d9c6d84d3e2efbafb9',
+        'reference' => '3edfc1e9fcac35428213428af7be75758e0ee04d',
         'type' => 'contao-bundle',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -83,9 +83,9 @@
             'dev_requirement' => false,
         ),
         'contao-components/ace' => array(
-            'pretty_version' => '1.24.1',
-            'version' => '1.24.1.0',
-            'reference' => 'f33515920f4754be2f155e963947fd0591e003c2',
+            'pretty_version' => '1.26.0',
+            'version' => '1.26.0.0',
+            'reference' => 'f4aaeb6d6028af294a7c9c3736b3acbf0ea9bbf0',
             'type' => 'contao-component',
             'install_path' => __DIR__ . '/../../contao-components/ace',
             'aliases' => array(),
@@ -239,6 +239,12 @@
             'dev_requirement' => false,
             'replaced' => array(
                 0 => '4.25.27',
+            ),
+        ),
+        'contao-legacy/multicolumnwizard' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
             ),
         ),
         'contao/core-bundle' => array(
@@ -577,9 +583,24 @@
         'mees-zacke/contao-speiseplan-bundle' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'db648c122f4d4ca8f2b769d9c6d84d3e2efbafb9',
+            'reference' => '3edfc1e9fcac35428213428af7be75758e0ee04d',
             'type' => 'contao-bundle',
             'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'menatwork/contao-multicolumnwizard' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '>=3.3.4 <4.0',
+            ),
+        ),
+        'menatwork/contao-multicolumnwizard-bundle' => array(
+            'pretty_version' => '3.5.9',
+            'version' => '3.5.9.0',
+            'reference' => 'e7fb483b6a4707c82082799d7abc16ac778b5e6a',
+            'type' => 'contao-bundle',
+            'install_path' => __DIR__ . '/../menatwork/contao-multicolumnwizard-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -773,9 +794,9 @@
             'dev_requirement' => false,
         ),
         'phpunit/php-code-coverage' => array(
-            'pretty_version' => '9.2.27',
-            'version' => '9.2.27.0',
-            'reference' => 'b0a88255cb70d52653d80c890bd7f38740ea50d1',
+            'pretty_version' => '9.2.29',
+            'version' => '9.2.29.0',
+            'reference' => '6a3a87ac2bbe33b25042753df8195ba4aa534c76',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
             'aliases' => array(),
@@ -818,9 +839,9 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
-            'pretty_version' => '9.6.11',
-            'version' => '9.6.11.0',
-            'reference' => '810500e92855eba8a7a5319ae913be2da6f957b0',
+            'pretty_version' => '9.6.13',
+            'version' => '9.6.13.0',
+            'reference' => 'f3d767f7f9e191eab4189abe41ab37797e30b1be',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
