@@ -3,16 +3,16 @@
   <file datatype="php" original="src/Resources/contao/languages/de/tl_speiseplan.php" source-language="de">
     <body>
       <trans-unit id="tl_speiseplan.name.0">
-        <source>Kalenderwoche</source>
+        <source>Name</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.name.1">
-        <source>Tragen Sie die Kalenderwoche des Speiseplans ein.</source>
+        <source>Tragen Sie den Namen des Speiseplans ein.</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.menuList.0">
         <source>Menüliste</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.menuList.1">
-        <source>Hier können die Menüs definiert werden. Diese Auswahl definiert die Labels der Speisepläne, sowie die Verarbeitung des Excel-Imports. Durch Hinzufügen von HTML können die Reihen des Speiseplans formatiert werden.</source>
+        <source>Hier können die Menüs definiert werden. Diese Auswahl definiert die Labels der Speisepläne, sowie die Verarbeitung des Excel-Imports.</source>
       </trans-unit>
       <trans-unit id="tl_speiseplan.addNewsletter.0">
         <source>Speiseplan als Newsletter ausgeben.</source>

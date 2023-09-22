@@ -67,7 +67,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
     ],
     'palettes' => [
                 '__selector__'                => ['addNewsletter'],
-        		'default'                     => '{speiseplan_legend},name,menuList;{newsletter_legend},addNewsletter;{publish_legend},published',
+        		'default'                     => '{speiseplan_legend},name,menuList;{publish_legend},published',
     ],
     'subpalettes' => [
         'addNewsletter' => 'about,senderName,senderEmail,text,mailTemplate',
@@ -94,7 +94,7 @@ $GLOBALS['TL_DCA']['tl_speiseplan'] = [
 			'exclude'                 => true,
 			'inputType'               => 'listWizard',
 			'eval'                    => array('mandatory' => true, 'multiple'=>true, 'allowHtml'=>true, 'tl_class'=>'w50 clr'),
-			'sql'                     => "blob NOT NULL"
+			'sql'                     => "blob NULL"
 		),
 		'addNewsletter' => [
 			'exclude'                 => true,
