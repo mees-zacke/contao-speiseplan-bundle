@@ -14,7 +14,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan'] = array
 	'inputType'               => 'radio',
 	'options_callback'        => array('tl_module_speiseplan', 'getSpeiseplan'),
 	'eval'                    => array('multiple'=>true, 'mandatory'=>true),
-	'sql'                     => "blob NULL"
+	'sql'                     => "varchar(255) NULL"
 );
 
 

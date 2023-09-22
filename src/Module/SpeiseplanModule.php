@@ -53,14 +53,14 @@ class SpeiseplanModule extends SpeiseplanModuleParse
         /*
             Get Weeks by chosen Speiseplans
         */
-        $speiseplanArr = \StringUtil::deserialize($this->speiseplan);
-        $this->Template->speiseplan = $speiseplanArr;
+        $speiseplan = $this->speiseplan;
+        $this->Template->speiseplan = $speiseplan;
 		$this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptySpeiseplan'];
 
         $listType = $this->speiseplan_listType;
         $sorting = $this->speiseplan_sorting;
 
-        $speiseplan = SpeiseplanModel::findBy('id',$speiseplanArr);
+        $speiseplan = SpeiseplanModel::findBy('id',$speiseplan);
 
         $menuStructure = \StringUtil::deserialize($speiseplan->menuList);
         $this->Template->speiseplan_menuList = $menuStructure;
@@ -68,7 +68,7 @@ class SpeiseplanModule extends SpeiseplanModuleParse
         $weekExpired = time();
         $weekExpired = $weekExpired - (7 * 24 * 60 * 60);
 
-        $speiseplanData = SpeiseplanWeekModel::findBy(['pid IN (' . implode(',', $speiseplanArr) . ')','startDate > ?'], [$weekExpired],['order' => 'startDate ' . $sorting]);
+        $speiseplanData = SpeiseplanWeekModel::findBy(['pid = ?','startDate > ?'], [$speiseplan,$weekExpired],['order' => 'startDate ' . $sorting]);
 
         $limit = $this->numberOfItems;
         $offset = $this->skipFirst;
