@@ -36,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['speiseplan_sorting'] = array
 	'options'                 => ['ASC', 'DESC'],
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module'],
 	'eval'                    => array('tl_class' => 'w50'),
-	'sql'                     => "varchar(255) NOT NULL default 'order_date_asc'"
+	'sql'                     => "varchar(255) NOT NULL default 'ASC'"
 );
 
 
